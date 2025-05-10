@@ -24,11 +24,10 @@ export const ProductsGroupList: React.FC<Props> = ({
   listClassName,
 }) => {
   const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
-  // бесит эта красная хуйня снизу, надо починить
   const intersectionRef = React.useRef<HTMLDivElement | null>(null);
   const intersection = useIntersection(
     intersectionRef as React.RefObject<HTMLElement>,
-    { threshold: 0.4 }
+    { threshold: 0.5 }
   );
 
   React.useEffect(() => {
